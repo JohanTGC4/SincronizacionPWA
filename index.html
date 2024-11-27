@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Estudiantes - Sincronizacion</title>
+
+ <!-- Resumen para los motores de búsqueda. -->
+ <meta name="description" content="Ejemplo de PWA con Material Design">
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+
+ <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+ <meta name="theme-color" content="#fffbfe">
+
+ <!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.
+  Puede ser diferente para cada página. -->
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+
+ <!-- Configuración de la PWA para Chrome, Edge y Safari.
+  Debe ponerse en todas las páginas. -->
+  <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest"/>
+
+ <!-- Permite a los navegadores, que como Safari no soportan el estándar
+  completo de custom elementsm, lo cumplan totalmente. Debe ponerse en todas
+  las páginas. -->
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="lib/js/muestraError.js"></script>
+ <script type="module" src="js/bd/estudianteConsultaNoEliminados.js"></script>
+ <script type="module" src="js/renderiza.js"></script>
+ <script type="module" src="js/sincroniza.js"></script>
+ <script type="module" src="js/esperaUnPocoYSincroniza.js"></script>
+
+ <!-- Configuración de todas las páginas con JavaSript. -->
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_pestanas.css">
+ <script type="module" src="lib/js/consumeJson.js"></script>
+ <script type="module" src="lib/js/muestraObjeto.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+</head>
+
+<body onload="estudianteConsultaNoEliminados()
+   .then(estudiantes => {
+    renderiza(lista, estudiantes)
+    sincroniza(lista)
+   })
+   .catch(error => {
+    muestraError(error)
+    esperaUnPocoYSincroniza(lista)
+   })">
+   
+   <md-top-app-bar adicional="tab" headline="headline">
+
+    <h1>Lista de Estudiantes</h1>
+  
+   </md-top-app-bar>
+  
+   <h1 id="headline"style="text-align: center;">Lista de Estudiantes</h1>
+  
+   <nav-tab-fixed id="tab"></nav-tab-fixed>
+
+ <main>
+   
+ 
+  
+   <ul class="md-list" id="lista">
+      
+    <li><progress max="100">Cargando&hellip;</progress></li>
+    
+   </ul>
+</main>
+<button type="button" class="md-fab-primary"
+        style="position: fixed; bottom: 1rem; right: 1rem;"
+        onclick="window.location.href='agrega.html'">
+    <span class="material-symbols-outlined">add</span>
+</button>
+
+ </body>
+  
+  </html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <title>Sincronizacion</title>
+
+ <meta name="viewport" content="width=device-width">
+
+ <script src="js/registraServiceWorker.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+ <script type="module" src="js/bd/estudianteConsultaNoEliminados.js"></script>
+ <script type="module" src="js/renderiza.js"></script>
+ <script type="module" src="js/sincroniza.js"></script>
+ <script type="module" src="js/esperaUnPocoYSincroniza.js"></script>
+
+</head>
+
+<body onload="estudianteConsultaNoEliminados()
+   .then(estudiantes => {
+    renderiza(lista, estudiantes)
+    sincroniza(lista)
+   })
+   .catch(error => {
+    muestraError(error)
+    esperaUnPocoYSincroniza(lista)
+   })">
+
+ <h1>Sincronizacion</h1>
+
+ <p><a href="agrega.html">Agregar</a></p>
+
+ <ul id="lista">
+  <li><progress max="100">Cargando&hellip;</progress></li>
+ </ul>
+
+</body>
+
+</html> -->

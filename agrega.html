@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Altas - Sincronizacion</title>
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+ <meta name="theme-color" content="#fffbfe">
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+ <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest"/>
+
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_pestanas.css">
+ <script type="module" src="lib/js/submitForm.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+ <script type="module" src="js/configura.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+ <script type="module" src="js/bd/estudianteAgrega.js"></script>
+
+
+ <script type="module" src="lib/js/consumeJson.js"></script>
+ <script type="module" src="lib/js/muestraObjeto.js"></script>
+
+</head>
+<body>
+
+  <md-top-app-bar adicional="tab" headline="headline">
+    <button class="md-standard-icon-button"    type="button" slot="navigation" title="Atrás" onclick="window.location.href='index.html'">
+       <span class="material-symbols-outlined">arrow_back</span>
+     </button>
+    
+
+   <!-- <button type="button" class="md-standard-icon-button" title="Atrás" slot="action">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button> -->
+
+    
+    <button type="button" class="md-standard-icon-button" title="Guardar" slot="action"
+    onclick="document.getElementById('forma').requestSubmit()">
+    <span class="material-symbols-outlined">save</span>
+  </button>
+   
+
+    
+    
+    <h1>Agregar</h1>
+  
+   </md-top-app-bar>
+  
+   <h1 id="headline">Agregar</h1>
+  
+   <nav-tab-fixed id="tab"></nav-tab-fixed>
+
+   <main>
+    <form id="forma" onsubmit="
+   event.preventDefault();
+   // Lee el nombre, quitándole los espacios al inicio y al final.
+   const EST_NOMBRE = forma.nombre.value.trim();
+   const EST_DEPORTE = forma.deporte.value.trim();
+   const EST_COLOR = forma.color.value.trim();
+   const modelo = { EST_NOMBRE, EST_DEPORTE, EST_COLOR  };
+   estudianteAgrega(modelo)
+      .then(json => location.href = 'index.html')
+      .catch(muestraError)">
+ 
+   
+   <!-- <p><a href="index.html">Cancelar</a></p> -->
+ 
+   <p>
+    <label class="md-filled-text-field">
+     <input name="nombre" required placeholder="Nombre*">
+     <span>Nombre *</span>
+     <small>Obligatorio</small>
+    </label>
+   </p>
+   <p>
+    <label class="md-filled-text-field">
+     <input name="deporte" required placeholder="Deporte*">
+     <span>Deporte *</span>
+     <small>Obligatorio</small>
+    </label>
+   </p>
+   <p>
+    <label class="md-filled-text-field">
+     <input name="color" required placeholder="Color*">
+     <span>Color *</span>
+     <small>Obligatorio</small>
+    </label>
+   </p>
+
+   <!-- <p><button type="submit">Agregar</button></p> -->
+ 
+  </form>
+ 
+ </body>
+ 
+ </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width">
+
+ <title>Agregar</title>
+
+ <script type="module" src="js/configura.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+ <script type="module" src="js/bd/estudianteAgrega.js"></script>
+
+</head>
+
+<body>
+
+ <form id="forma" onsubmit="
+   event.preventDefault()
+   // Lee el nombre, quitándole los espacios al inicio y al final.
+   const EST_NOMBRE = forma.nombre.value.trim()
+   const modelo = { EST_NOMBRE }
+   estudianteAgrega(modelo)
+    .then(json => location.href = 'index.html')
+    .catch(muestraError)">
+
+  <h1>Agregar</h1>
+
+  <p><a href="index.html">Cancelar</a></p>
+
+  <p>
+   <label>
+    Nombre *
+    <input name="nombre">
+   </label>
+  </p>
+  <p>* Obligatorio</p>
+  <p><button type="submit">Agregar</button></p>
+
+ </form>
+
+</body>
+
+</html> -->
