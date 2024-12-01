@@ -54,7 +54,14 @@ const ARCHIVOS = [
 "js/registraServiceWorker.js",
 "js/renderiza.js",
 "js/sincroniza.js",
+"js/configura.js",
+ "js/nav-bar.js",
+ "js/nav-drw.js",
+ "js/nav-tab-fixed.js",
+ "js/nav-tab-scrollable.js",
+
 "js/bd/Bd.js",
+
 "js/bd/estudianteAgrega.js",
 "js/bd/estudianteBusca.js",
 "js/bd/estudianteConsultaNoEliminados.js",
@@ -71,12 +78,36 @@ const ARCHIVOS = [
 "lib/js/bdEjecuta.js",
 "lib/js/consumeJson.js",
 "lib/js/creaIdCliente.js",
+"lib/js/abreElementoHtml.js",
 "lib/js/enviaJson.js",
 "lib/js/exportaAHtml.js",
+"lib/js/cierraElementoHtmo.js",
+"lib/js/querySelector.js",
+"lib/js/resaltaSiEstasEn.js",
+"lib/js/getAttribute.js",
+
 "lib/js/htmlentities.js",
 "lib/js/muestraError.js",
 "lib/js/muestraObjeto.js",
 "lib/js/ProblemDetails.js",
+
+"lib/css/material-symbols-outlined.css",
+ "lib/css/md-cards.css",
+ "lib/css/md-fab-primary.css",
+ "lib/css/md-filled-button.css",
+ "lib/css/md-filled-text-field.css",
+ "lib/css/md-list.css",
+ "lib/css/md-menu.css",
+ "lib/css/md-navigation-bar.css",
+ "lib/css/md-outline-button.css",
+ "lib/css/md-ripple.css",
+ "lib/css/md-segmented-button.css",
+ "lib/css/md-slider-field.css",
+ "lib/css/md-standard-icon-button.css",
+ "lib/css/md-switch.css",
+ "lib/css/md-tab.css",
+ "lib/css/md-top-app-bar.css",
+ "lib/css/roboto.css",
 
  "img/icono2048.png",
  "img/maskable_icon.png",
@@ -89,6 +120,37 @@ const ARCHIVOS = [
  "img/maskable_icon_x96.png",
  "img/screenshot_horizontal.png",
  "img/screenshot_vertical.png",
+
+ "material-tokens/css/baseline.css",
+ "material-tokens/css/colors.css",
+ "material-tokens/css/elevation.css",
+ "material-tokens/css/motion.css",
+ "material-tokens/css/palette.css",
+ "material-tokens/css/shape.css",
+ "material-tokens/css/state.css",
+ "material-tokens/css/typography.css",
+ "material-tokens/css/theme/dark.css",
+ "material-tokens/css/theme/light.css",
+ "ungap/custom-elements.js",
+
+
+
+ "lib/js/const/ES_APPLE.js",
+"lib/js/custom/md-menu-button.js",
+"lib/js/custom/md-options-menu.js",
+"lib/js/custom/md-overflow-button.js",
+"lib/js/custom/md-overflow-menu.js",
+"lib/js/custom/md-select-menu.js",
+"lib/js/custom/md-slider-field.js",
+"lib/js/custom/md-top-app-bar.js",
+"lib/js/custom/MdNavigationDrawer.js",
+
+"lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints",
+ "lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
+ "lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2",
+ "lib/fonts/roboto-v32-latin-regular.woff2",
+
+
 
  "/"
 ]
